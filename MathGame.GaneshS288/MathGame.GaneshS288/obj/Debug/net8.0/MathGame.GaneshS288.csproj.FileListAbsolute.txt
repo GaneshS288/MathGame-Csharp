@@ -1,0 +1,15 @@
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\bin\Debug\net8.0\MathGame.GaneshS288.exe
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\bin\Debug\net8.0\MathGame.GaneshS288.deps.json
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\bin\Debug\net8.0\MathGame.GaneshS288.runtimeconfig.json
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\bin\Debug\net8.0\MathGame.GaneshS288.dll
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\bin\Debug\net8.0\MathGame.GaneshS288.pdb
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\obj\Debug\net8.0\MathGame.GaneshS288.GeneratedMSBuildEditorConfig.editorconfig
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\obj\Debug\net8.0\MathGame.GaneshS288.AssemblyInfoInputs.cache
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\obj\Debug\net8.0\MathGame.GaneshS288.AssemblyInfo.cs
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\obj\Debug\net8.0\MathGame.GaneshS288.csproj.CoreCompileInputs.cache
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\obj\Debug\net8.0\MathGame.GaneshS288.sourcelink.json
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\obj\Debug\net8.0\MathGame.GaneshS288.dll
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\obj\Debug\net8.0\refint\MathGame.GaneshS288.dll
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\obj\Debug\net8.0\MathGame.GaneshS288.pdb
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\obj\Debug\net8.0\MathGame.GaneshS288.genruntimeconfig.cache
+D:\GaneshCode\C#\MathGame-Csharp\MathGame.GaneshS288\MathGame.GaneshS288\obj\Debug\net8.0\ref\MathGame.GaneshS288.dll
