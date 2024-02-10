@@ -1,5 +1,7 @@
 ﻿Random random = new Random();
 
+string[] gameRecords = new string[100];  
+int recordCounter = 0;
 
 string? userInput;
 bool isValidInput;
@@ -15,6 +17,9 @@ do
 
     if (userInput == "0")
         break;
+
+    else if (userInput == "5")
+        DisplayGameRecords();
 
     else if (checkInput > 1 && checkInput > 4 || isValidInput == false)
     {
@@ -33,6 +38,7 @@ void PrintGameSelection()
     Console.WriteLine("Enter 2 to play a subtraction game");
     Console.WriteLine("Enter 3 to play a multiplication game");
     Console.WriteLine("Enter 4 to play a division game");
+    Console.WriteLine("Enter 5 to see previous game records");
 
     Console.WriteLine("\nEnter 0 to exit");
 }
@@ -90,15 +96,20 @@ void PlayGame()
 
                 if (isValidInput == true && result == userAnswer)
                 {
-                    Console.WriteLine($"{result} was the right answer!");
+                    Console.WriteLine($"{result} was the right answer!(Press enter to continue)");
+                    Console.ReadLine();
                     //retain index value to prevent indexOutOfRange error
                     userInput = $"{index}";
+                    gameRecords[recordCounter] = $"Game {recordCounter}: Problem: {firstNum} {mathOperators[index]} {secondNum}, Answer: {result}, User answer: {userAnswer} ";
+                    recordCounter++;
                 }
 
                 else if (isValidInput == true && result != userAnswer)
                 {
                     Console.WriteLine($"{userAnswer} is not the right answer, the right answer is {result}. (press enter to continue)");
                     Console.ReadLine();
+                    gameRecords[recordCounter] = $"Game {recordCounter}: Problem: {firstNum} {mathOperators[index]} {secondNum}, Answer: {result}, User answer: {userAnswer} ";
+                    recordCounter++;
                 }
 
                 else if (userInput == "exit")
@@ -137,4 +148,19 @@ double Divide(double firstNum, double secondNum)
     double result = firstNum / secondNum;
     result = double.Truncate(result * 100)/100;
     return result;
+}
+
+void DisplayGameRecords()
+{
+    foreach (string record in gameRecords)
+    {
+        Console.WriteLine(record);
+        if (record == null)
+        {
+            Console.WriteLine("No more records to display(Press enter to continue)");
+            Console.ReadLine();
+            break;
+        }
+
+    }
 }
