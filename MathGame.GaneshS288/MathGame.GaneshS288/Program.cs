@@ -1,6 +1,6 @@
 ﻿Random random = new Random();
 
-string[] gameRecords = new string[100];  
+string[] gameRecords = new string[100];
 int recordCounter = 0;
 
 string? userInput;
@@ -8,7 +8,7 @@ bool isValidInput;
 
 do
 {
-    Console.WriteLine("Hello there! Which Game would you like to play Today?");
+    Console.WriteLine("Hello there! Which Game would you like to play Today?\n");
     PrintGameSelection();
     userInput = Console.ReadLine().Trim();
 
@@ -96,7 +96,7 @@ void PlayGame()
 
                 if (isValidInput == true && result == userAnswer)
                 {
-                    Console.WriteLine($"{result} was the right answer!(Press enter to continue)");
+                    Console.WriteLine($"{result} was the right answer!(Press enter to continue)\n");
                     Console.ReadLine();
                     //retain index value to prevent indexOutOfRange error
                     userInput = $"{index}";
@@ -106,7 +106,7 @@ void PlayGame()
 
                 else if (isValidInput == true && result != userAnswer)
                 {
-                    Console.WriteLine($"{userAnswer} is not the right answer, the right answer is {result}. (press enter to continue)");
+                    Console.WriteLine($"{userAnswer} is not the right answer, the right answer is {result}. (press enter to continue)\n");
                     Console.ReadLine();
                     gameRecords[recordCounter] = $"Game {recordCounter}: Problem: {firstNum} {mathOperators[index]} {secondNum}, Answer: {result}, User answer: {userAnswer} ";
                     recordCounter++;
@@ -146,7 +146,7 @@ double Multiply(double firstNum, double secondNum)
 double Divide(double firstNum, double secondNum)
 {
     double result = firstNum / secondNum;
-    result = double.Truncate(result * 100)/100;
+    result = double.Truncate(result * 100) / 100;
     return result;
 }
 
