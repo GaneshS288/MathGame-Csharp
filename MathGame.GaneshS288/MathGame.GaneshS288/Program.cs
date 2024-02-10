@@ -59,7 +59,7 @@ void PlayGame()
 
             Console.WriteLine($"{gameName[index]} Game");
             Console.WriteLine($"{firstNum} {mathOperators[index]} {secondNum}");
-            Console.WriteLine($"Enter your answer below (or type exit to go back to selection screen)");
+            Console.WriteLine($"Enter your answer below. Answer should be accurate up to 2 decimal places.\n (type exit to go back to selection screen)");
 
             while (isValidInput != true)
             {

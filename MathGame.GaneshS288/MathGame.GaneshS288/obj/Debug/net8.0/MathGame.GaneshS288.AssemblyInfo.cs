@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MathGame.GaneshS288")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc26d7d752054a26e8fbe8db4d5f506c7e80de27")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bb94747fe2c2c3de0442df7e86fa6ea1c5897f8")]
 [assembly: System.Reflection.AssemblyProductAttribute("MathGame.GaneshS288")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MathGame.GaneshS288")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
