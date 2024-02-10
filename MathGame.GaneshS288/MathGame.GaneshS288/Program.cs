@@ -76,6 +76,7 @@ void PlayGame()
             if (isValidinput == true && result == userAnswer)
             {
                 Console.WriteLine($"{result} was the right answer!");
+                userInput = $"{index}";
             }
 
             else if (isValidinput == true && result != userAnswer)
