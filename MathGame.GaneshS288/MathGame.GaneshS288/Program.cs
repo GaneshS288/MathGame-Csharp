@@ -1,4 +1,4 @@
-﻿Console.WriteLine("Hello there! Which Game would you like to play Today");
+﻿Console.WriteLine("Hello there! Which Game would you like to play Today?");
 string? userInput;
 do
 {
@@ -13,7 +13,15 @@ void PrintGameSelection()
     Console.WriteLine("Enter 1 to play an addition game");
     Console.WriteLine("Enter 2 to play a subtraction game");
     Console.WriteLine("Enter 3 to play a multiplication game");
-    Console.WriteLine("Enter 3 to play a division game");
+    Console.WriteLine("Enter 4 to play a division game");
 
     Console.WriteLine("\nEnter 0 to exit");
 }
+
+void PlayGame(string input)
+{
+    string[] selectionChoices = { "0", "1", "2", "3", "4" };
+    string[] gameNames = { "Exit", "Addition", "Subtraction", "Multiplication", "Division" };
+
+}
+
