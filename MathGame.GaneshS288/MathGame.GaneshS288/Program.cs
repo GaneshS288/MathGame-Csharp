@@ -10,7 +10,7 @@ do
 {
     Console.WriteLine("Hello there! Which Game would you like to play Today?\n");
     PrintGameSelection();
-    userInput = Console.ReadLine().Trim();
+    userInput = Console.ReadLine()?.Trim();
 
     int checkInput;
     isValidInput = int.TryParse(userInput, out checkInput);
@@ -70,7 +70,7 @@ void PlayGame()
             while (isValidInput != true)
             {
 
-                userInput = Console.ReadLine().Trim().ToLower();
+                userInput = Console.ReadLine()?.Trim().ToLower();
 
                 double userAnswer;
                 isValidInput = double.TryParse(userInput, out userAnswer);
