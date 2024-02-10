@@ -40,9 +40,9 @@ void PlayGame()
         while (isValidinput != true)
         {
 
-            int firstNum = random.Next(1, 11);
-            int secondNum = random.Next(1, 11);
-            int result = 0;
+            double firstNum = random.Next(1, 11);
+            double secondNum = random.Next(1, 11);
+            double result = 0;
 
 
             Console.WriteLine($"{gameName[index]} Game");
@@ -51,8 +51,8 @@ void PlayGame()
 
             userInput = Console.ReadLine();
 
-            int userAnswer;
-            isValidinput = int.TryParse(userInput, out userAnswer);
+            double userAnswer;
+            isValidinput = double.TryParse(userInput, out userAnswer);
 
             switch (gameName[index])
             {
@@ -76,6 +76,7 @@ void PlayGame()
             if (isValidinput == true && result == userAnswer)
             {
                 Console.WriteLine($"{result} was the right answer!");
+                //retain index value to prevent indexOutOfRange error
                 userInput = $"{index}";
             }
 
@@ -94,27 +95,27 @@ void PlayGame()
 }
 
 
-int Add(int firstNum, int secondNum)
+double Add(double firstNum, double secondNum)
 {
 
-    int result = firstNum + secondNum;
+    double result = firstNum + secondNum;
     return result;
 }
 
-int Subtract(int firstNum, int secondNum)
+double Subtract(double firstNum, double secondNum)
 {
-    int result = firstNum - secondNum;
+    double result = firstNum - secondNum;
     return result;
 }
 
-int Multiply(int firstNum, int secondNum)
+double Multiply(double firstNum, double secondNum)
 {
-    int result = firstNum * secondNum;
+    double result = firstNum * secondNum;
     return result;
 }
 
-int Divide(int firstNum, int secondNum)
+double Divide(double firstNum, double secondNum)
 {
-    int result = firstNum / secondNum;
+    double result = firstNum / secondNum;
     return result;
 }
