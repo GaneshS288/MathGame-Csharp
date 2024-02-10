@@ -2,17 +2,28 @@
 
 
 string? userInput;
-bool isValidinput;
+bool isValidInput;
 
 do
 {
     Console.WriteLine("Hello there! Which Game would you like to play Today?");
     PrintGameSelection();
     userInput = Console.ReadLine().Trim();
-    PlayGame();
-    
 
-    
+    int checkInput;
+    isValidInput = int.TryParse(userInput, out checkInput);
+
+    if (userInput == "0")
+        break;
+
+    else if (checkInput > 1 && checkInput > 4 || isValidInput == false)
+    {
+        Console.WriteLine("Please enter a valid value");
+        Console.ReadLine();
+    }
+
+    else
+        PlayGame();
 }
 while (userInput != "0");
 
@@ -34,11 +45,12 @@ void PlayGame()
         string[] mathOperators = { "", "+", "-", "*", "/" };
 
         int index;
-        isValidinput = int.TryParse(userInput, out index);
-        isValidinput = false;
+        isValidInput = int.TryParse(userInput, out index);
 
-        while (isValidinput != true)
+        while (userInput != "exit")
         {
+            //change bool value so inner loop can work
+            isValidInput = false;
 
             double firstNum = random.Next(1, 11);
             double secondNum = random.Next(1, 11);
@@ -47,48 +59,55 @@ void PlayGame()
 
             Console.WriteLine($"{gameName[index]} Game");
             Console.WriteLine($"{firstNum} {mathOperators[index]} {secondNum}");
-            Console.WriteLine($"Enter your answer Below");
+            Console.WriteLine($"Enter your answer below (or type exit to go back to selection screen)");
 
-            userInput = Console.ReadLine();
-
-            double userAnswer;
-            isValidinput = double.TryParse(userInput, out userAnswer);
-
-            switch (gameName[index])
+            while (isValidInput != true)
             {
-                case "Addition":
-                    result = Add(firstNum, secondNum);
+
+                userInput = Console.ReadLine().Trim().ToLower();
+
+                double userAnswer;
+                isValidInput = double.TryParse(userInput, out userAnswer);
+
+                switch (gameName[index])
+                {
+                    case "Addition":
+                        result = Add(firstNum, secondNum);
+                        break;
+
+                    case "Subtraction":
+                        result = Subtract(firstNum, secondNum);
+                        break;
+
+                    case "Multiplication":
+                        result = Multiply(firstNum, secondNum);
+                        break;
+
+                    case "Division":
+                        result = Divide(firstNum, secondNum);
+                        break;
+                }
+
+                if (isValidInput == true && result == userAnswer)
+                {
+                    Console.WriteLine($"{result} was the right answer!");
+                    //retain index value to prevent indexOutOfRange error
+                    userInput = $"{index}";
+                }
+
+                else if (isValidInput == true && result != userAnswer)
+                {
+                    Console.WriteLine($"{userAnswer} is not the right answer, the right answer is {result}. (press enter to continue)");
+                    Console.ReadLine();
+                }
+
+                else if (userInput == "exit")
                     break;
 
-                case "Subtraction":
-                    result = Subtract(firstNum, secondNum);
-                    break;
 
-                case "Multiplication":
-                    result = Multiply(firstNum, secondNum);
-                    break;
+                else
+                    Console.WriteLine("Please enter a valid value.(or type exit to go back)");
 
-                case "Division":
-                    result = Divide(firstNum, secondNum);
-                    break;
-            }
-
-            if (isValidinput == true && result == userAnswer)
-            {
-                Console.WriteLine($"{result} was the right answer!");
-                //retain index value to prevent indexOutOfRange error
-                userInput = $"{index}";
-            }
-
-            else if (isValidinput == true && result != userAnswer)
-            {
-                Console.WriteLine($"{userAnswer} is not the right answer, the right answer is {result}");
-                isValidinput = false;
-            }
-
-            else
-            {
-                Console.WriteLine("Please enter a valid value");
             }
         }
     }
@@ -97,7 +116,6 @@ void PlayGame()
 
 double Add(double firstNum, double secondNum)
 {
-
     double result = firstNum + secondNum;
     return result;
 }
@@ -117,5 +135,6 @@ double Multiply(double firstNum, double secondNum)
 double Divide(double firstNum, double secondNum)
 {
     double result = firstNum / secondNum;
+    result = double.Truncate(result * 100)/100;
     return result;
 }
