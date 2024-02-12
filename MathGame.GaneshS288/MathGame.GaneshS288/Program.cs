@@ -1,4 +1,8 @@
-﻿Random random = new Random();
+﻿using MathGame;
+
+Random random = new Random();
+
+Menu menu = new Menu();
 
 List<string> gameRecords = new List<string>();
 int recordCounter = 0;
@@ -9,7 +13,7 @@ bool isValidInput;
 do
 {
     
-    PrintGameSelection();
+    menu.PrintGameSelection();
     userInput = Console.ReadLine()?.Trim();
 
     int checkInput;
@@ -32,18 +36,7 @@ do
 }
 while (userInput != "0");
 
-void PrintGameSelection()
-{
-    Console.Clear();
-    Console.WriteLine("Hello there! Which Game would you like to play Today?\n");
-    Console.WriteLine("Enter 1 to play an addition game");
-    Console.WriteLine("Enter 2 to play a subtraction game");
-    Console.WriteLine("Enter 3 to play a multiplication game");
-    Console.WriteLine("Enter 4 to play a division game");
-    Console.WriteLine("Enter 5 to see previous game records");
 
-    Console.WriteLine("\nEnter 0 to exit");
-}
 
 void PlayGame()
 {
