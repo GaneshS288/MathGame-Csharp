@@ -1,6 +1,6 @@
 ﻿Random random = new Random();
 
-string[] gameRecords = new string[100];
+List<string> gameRecords = new List<string>();
 int recordCounter = 0;
 
 string? userInput;
@@ -100,7 +100,7 @@ void PlayGame()
                     Console.ReadLine();
                     //retain index value to prevent indexOutOfRange error
                     userInput = $"{index}";
-                    gameRecords[recordCounter] = $"Game {recordCounter}: Problem: {firstNum} {mathOperators[index]} {secondNum}, Answer: {result}, User answer: {userAnswer} ";
+                    gameRecords.Add($"Game {recordCounter}: Problem: {firstNum} {mathOperators[index]} {secondNum}, Answer: {result}, User answer: {userAnswer} ");
                     recordCounter++;
                 }
 
@@ -108,13 +108,12 @@ void PlayGame()
                 {
                     Console.WriteLine($"{userAnswer} is not the right answer, the right answer is {result}. (press enter to continue)\n");
                     Console.ReadLine();
-                    gameRecords[recordCounter] = $"Game {recordCounter}: Problem: {firstNum} {mathOperators[index]} {secondNum}, Answer: {result}, User answer: {userAnswer} ";
+                    gameRecords.Add($"Game {recordCounter}: Problem: {firstNum} {mathOperators[index]} {secondNum}, Answer: {result}, User answer: {userAnswer} ");
                     recordCounter++;
                 }
 
                 else if (userInput == "exit")
                     break;
-
 
                 else
                     Console.WriteLine("Please enter a valid value.(or type exit to go back)");
@@ -152,14 +151,22 @@ double Divide(double firstNum, double secondNum)
 
 void DisplayGameRecords()
 {
+
+    if (!gameRecords.Any())
+    {
+        Console.WriteLine("No more records to display(Press enter to continue)");
+        Console.ReadLine();
+    }
+
     foreach (string record in gameRecords)
     {
         Console.WriteLine(record);
-        if (record == null)
+        
+        if (gameRecords.IndexOf(record) == (gameRecords.Count - 1)
+)
         {
             Console.WriteLine("No more records to display(Press enter to continue)");
             Console.ReadLine();
-            break;
         }
 
     }
