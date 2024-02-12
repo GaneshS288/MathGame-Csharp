@@ -8,7 +8,7 @@ bool isValidInput;
 
 do
 {
-    Console.WriteLine("Hello there! Which Game would you like to play Today?\n");
+    
     PrintGameSelection();
     userInput = Console.ReadLine()?.Trim();
 
@@ -34,6 +34,8 @@ while (userInput != "0");
 
 void PrintGameSelection()
 {
+    Console.Clear();
+    Console.WriteLine("Hello there! Which Game would you like to play Today?\n");
     Console.WriteLine("Enter 1 to play an addition game");
     Console.WriteLine("Enter 2 to play a subtraction game");
     Console.WriteLine("Enter 3 to play a multiplication game");
@@ -62,7 +64,7 @@ void PlayGame()
             double secondNum = random.Next(1, 11);
             double result = 0;
 
-
+            Console.Clear();
             Console.WriteLine($"{gameName[index]} Game");
             Console.WriteLine($"{firstNum} {mathOperators[index]} {secondNum}");
             Console.WriteLine($"Enter your answer below. Answer should be accurate up to 2 decimal places.\n (type exit to go back to selection screen)");
@@ -98,8 +100,10 @@ void PlayGame()
                 {
                     Console.WriteLine($"{result} was the right answer!(Press enter to continue)\n");
                     Console.ReadLine();
+
                     //retain index value to prevent indexOutOfRange error
                     userInput = $"{index}";
+
                     gameRecords.Add($"Game {recordCounter}: Problem: {firstNum} {mathOperators[index]} {secondNum}, Answer: {result}, User answer: {userAnswer} ");
                     recordCounter++;
                 }
@@ -108,6 +112,7 @@ void PlayGame()
                 {
                     Console.WriteLine($"{userAnswer} is not the right answer, the right answer is {result}. (press enter to continue)\n");
                     Console.ReadLine();
+
                     gameRecords.Add($"Game {recordCounter}: Problem: {firstNum} {mathOperators[index]} {secondNum}, Answer: {result}, User answer: {userAnswer} ");
                     recordCounter++;
                 }
@@ -151,6 +156,7 @@ double Divide(double firstNum, double secondNum)
 
 void DisplayGameRecords()
 {
+    Console.Clear();
 
     if (!gameRecords.Any())
     {
@@ -165,7 +171,7 @@ void DisplayGameRecords()
         if (gameRecords.IndexOf(record) == (gameRecords.Count - 1)
 )
         {
-            Console.WriteLine("No more records to display(Press enter to continue)");
+            Console.WriteLine("\nNo more records to display(Press enter to continue)");
             Console.ReadLine();
         }
 
