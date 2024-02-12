@@ -19,7 +19,8 @@ internal class Menu
         Console.WriteLine("Enter 2 to play a subtraction game");
         Console.WriteLine("Enter 3 to play a multiplication game");
         Console.WriteLine("Enter 4 to play a division game");
-        Console.WriteLine("Enter 5 to see previous game records");
+        Console.WriteLine("Enter 5 play a random game from above");
+        Console.WriteLine("Enter 6 to see previous game records");
 
         Console.WriteLine("\nEnter 0 to exit");
     }

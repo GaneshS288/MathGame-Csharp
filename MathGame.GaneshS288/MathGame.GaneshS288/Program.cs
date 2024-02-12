@@ -1,5 +1,6 @@
 ﻿using MathGame;
 
+Random random = new Random();
 Menu menu = new Menu();
 GameEngine gameEngine = new GameEngine();
 
@@ -20,28 +21,34 @@ do
 
     if (userInput == "0")
         break;
-
+    //randomize the selected game
     else if (userInput == "5")
+    {
+        userInput = $"{random.Next(1, 5)}";
+        StartGameEngine();
+    }
+
+    else if (userInput == "6")
         gameEngine.DisplayGameRecords();
 
-    else if (checkInput > 1 && checkInput > 4 || isValidInput == false)
+    else if (checkInput < 0 && checkInput > 6 || isValidInput == false)
     {
         Console.WriteLine("Please enter a valid value");
         Console.ReadLine();
     }
 
     else
-        PlayGame();
+        StartGameEngine();
 }
 while (userInput != "0");
 
 
 
-void PlayGame()
+void StartGameEngine()
 {
     while (userInput != "exit")
     {
-        
+
         isValidInput = int.TryParse(userInput, out index);
 
         while (userInput != "exit")
