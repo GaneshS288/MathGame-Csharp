@@ -21,6 +21,7 @@ do
 
     if (userInput == "0")
         break;
+
     //randomize the selected game
     else if (userInput == "5")
     {
@@ -46,18 +47,12 @@ while (userInput != "0");
 
 void StartGameEngine()
 {
+
+    isValidInput = int.TryParse(userInput, out index);
+
     while (userInput != "exit")
     {
-
-        isValidInput = int.TryParse(userInput, out index);
-
-        while (userInput != "exit")
-        {
-            userInput = gameEngine.PlayGame(userInput, index);
-        }
+        userInput = gameEngine.PlayGame(userInput, index);
     }
+
 }
-
-
-
-

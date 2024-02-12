@@ -1,35 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MathGame;
+﻿namespace MathGame;
 
 internal class MathOperations
 {
-    internal double Add(double firstNum, double secondNum)
+    internal int Add(int firstNum, int secondNum)
     {
-        double result = firstNum + secondNum;
+        int result = firstNum + secondNum;
         return result;
     }
 
-    internal double Subtract(double firstNum, double secondNum)
+    internal int Subtract(int firstNum, int secondNum)
     {
-        double result = firstNum - secondNum;
+        int result = firstNum - secondNum;
         return result;
     }
 
-    internal double Multiply(double firstNum, double secondNum)
+    internal int Multiply(int firstNum, int secondNum)
     {
-        double result = firstNum * secondNum;
+        int result = firstNum * secondNum;
         return result;
     }
 
-    internal double Divide(double firstNum, double secondNum)
+    internal int Divide(int firstNum, int secondNum)
     {
-        double result = firstNum / secondNum;
-        result = double.Truncate(result * 100) / 100;
+        int result = firstNum / secondNum;
         return result;
     }
 }

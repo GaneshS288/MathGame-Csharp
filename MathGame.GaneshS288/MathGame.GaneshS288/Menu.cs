@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MathGame;
+﻿namespace MathGame;
 
 internal class Menu
 {
@@ -25,7 +19,7 @@ internal class Menu
         Console.WriteLine("\nEnter 0 to exit");
     }
 
-    internal void PrintCurrentGame(double firstNum, double secondNum, int index)
+    internal void PrintCurrentGame(int firstNum, int secondNum, int index)
     {
         Console.Clear();
         Console.WriteLine($"{gameName[index]} Game");

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathGame;
-
-
+﻿using MathGame;
 
 namespace MathGame;
 
@@ -15,9 +8,9 @@ internal class GameEngine
     Menu menu = new Menu();
     Random random = new Random();
 
-    double firstNum;
-    double secondNum;
-    double result = 0;
+    int firstNum;
+    int secondNum;
+    int result = 0;
 
     List<string> gameRecords = new List<string>();
     int recordCounter = 0;
@@ -55,8 +48,8 @@ internal class GameEngine
 
             userInput = Console.ReadLine()?.Trim().ToLower();
 
-            double userAnswer;
-            isValidInput = double.TryParse(userInput, out userAnswer);
+            int userAnswer;
+            isValidInput = int.TryParse(userInput, out userAnswer);
 
             if (isValidInput == true && result == userAnswer)
             {
@@ -81,7 +74,11 @@ internal class GameEngine
                 break;
 
             else
-                Console.WriteLine("Please enter a valid value.(or type exit to go back)");
+            {
+
+                Console.WriteLine("Please enter a valid value.(Press Enter to continue)");
+                Console.ReadLine();
+            }
         }
 
         return userInput == null ? userInput = "exit" : userInput;
@@ -99,7 +96,7 @@ internal class GameEngine
         }
     }
 
-    void AddGameRecords(int index, double userAnswer)
+    void AddGameRecords(int index, int userAnswer)
     {
         recordCounter++;
         gameRecords.Add($"Game {recordCounter}: Problem: {firstNum} {menu.mathOperators[index]} {secondNum}, \tAnswer: {result}, \tUser answer: {userAnswer} ");
