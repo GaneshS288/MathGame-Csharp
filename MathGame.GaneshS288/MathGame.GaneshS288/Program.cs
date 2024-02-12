@@ -3,9 +3,15 @@
 Random random = new Random();
 
 Menu menu = new Menu();
+MathOperations mathOperations = new MathOperations();
 
 List<string> gameRecords = new List<string>();
 int recordCounter = 0;
+
+string[] gameName = { "", "Addition", "Subtraction", "Multiplication", "Division" };
+string[] mathOperators = { "", "+", "-", "*", "/" };
+
+int index;
 
 string? userInput;
 bool isValidInput;
@@ -42,10 +48,7 @@ void PlayGame()
 {
     while (userInput != "exit")
     {
-        string[] gameName = { "", "Addition", "Subtraction", "Multiplication", "Division" };
-        string[] mathOperators = { "", "+", "-", "*", "/" };
-
-        int index;
+        
         isValidInput = int.TryParse(userInput, out index);
 
         while (userInput != "exit")
@@ -73,19 +76,19 @@ void PlayGame()
                 switch (gameName[index])
                 {
                     case "Addition":
-                        result = Add(firstNum, secondNum);
+                        result = mathOperations.Add(firstNum, secondNum);
                         break;
 
                     case "Subtraction":
-                        result = Subtract(firstNum, secondNum);
+                        result = mathOperations.Subtract(firstNum, secondNum);
                         break;
 
                     case "Multiplication":
-                        result = Multiply(firstNum, secondNum);
+                        result = mathOperations.Multiply(firstNum, secondNum);
                         break;
 
                     case "Division":
-                        result = Divide(firstNum, secondNum);
+                        result = mathOperations.Divide(firstNum, secondNum);
                         break;
                 }
 
@@ -122,30 +125,7 @@ void PlayGame()
 }
 
 
-double Add(double firstNum, double secondNum)
-{
-    double result = firstNum + secondNum;
-    return result;
-}
 
-double Subtract(double firstNum, double secondNum)
-{
-    double result = firstNum - secondNum;
-    return result;
-}
-
-double Multiply(double firstNum, double secondNum)
-{
-    double result = firstNum * secondNum;
-    return result;
-}
-
-double Divide(double firstNum, double secondNum)
-{
-    double result = firstNum / secondNum;
-    result = double.Truncate(result * 100) / 100;
-    return result;
-}
 
 void DisplayGameRecords()
 {
