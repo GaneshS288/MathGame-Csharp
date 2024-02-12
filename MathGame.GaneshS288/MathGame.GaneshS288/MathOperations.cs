@@ -4,33 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MathGame
+namespace MathGame;
+
+internal class MathOperations
 {
-    internal class MathOperations
+    internal double Add(double firstNum, double secondNum)
     {
-        internal double Add(double firstNum, double secondNum)
-        {
-            double result = firstNum + secondNum;
-            return result;
-        }
+        double result = firstNum + secondNum;
+        return result;
+    }
 
-        internal double Subtract(double firstNum, double secondNum)
-        {
-            double result = firstNum - secondNum;
-            return result;
-        }
+    internal double Subtract(double firstNum, double secondNum)
+    {
+        double result = firstNum - secondNum;
+        return result;
+    }
 
-        internal double Multiply(double firstNum, double secondNum)
-        {
-            double result = firstNum * secondNum;
-            return result;
-        }
+    internal double Multiply(double firstNum, double secondNum)
+    {
+        double result = firstNum * secondNum;
+        return result;
+    }
 
-        internal double Divide(double firstNum, double secondNum)
-        {
-            double result = firstNum / secondNum;
-            result = double.Truncate(result * 100) / 100;
-            return result;
-        }
+    internal double Divide(double firstNum, double secondNum)
+    {
+        double result = firstNum / secondNum;
+        result = double.Truncate(result * 100) / 100;
+        return result;
     }
 }
