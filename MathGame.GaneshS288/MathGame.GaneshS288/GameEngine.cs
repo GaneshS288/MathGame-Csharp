@@ -26,8 +26,8 @@ internal class GameEngine
     {
         bool isValidInput = false;
 
-        firstNum = random.Next(1, 11);
-        secondNum = random.Next(1, 11);
+        firstNum = random.Next(1, 101);
+        secondNum = random.Next(1, 101);
 
         while (isValidInput != true)
         {
@@ -91,8 +91,8 @@ internal class GameEngine
     {
         while (true)
         {
-            firstNum = random.Next(1, 11);
-            secondNum = random.Next(1, 11);
+            firstNum = random.Next(1, 101);
+            secondNum = random.Next(1, 101);
 
             if (firstNum % secondNum == 0)
                 break;
